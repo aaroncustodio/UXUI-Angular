@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Product Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <input matInput placeholder="ID" formControlName="id" readonly>
+    </mat-form-field>
+
+    <mat-label>Active?</mat-label>
+    <mat-slide-toggle [checked]='true' formControlName="isActive">
+    </mat-slide-toggle>
+
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Price" formControlName="price">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Image URL" formControlName="imageURL">
+    </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button type="submit" (click)="addProduct()" mat-dialog-close [disabled]="formisvalid" mat-button cdkFocusInitial>{{mode}} Product</button>
+</div>

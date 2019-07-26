@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Category Form</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="ID">
+    </mat-form-field>
+
+    <mat-label>Active?</mat-label>
+    <mat-slide-toggle [checked]='true'>
+    </mat-slide-toggle>
+
+    <mat-form-field>
+      <input matInput placeholder="Name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button type="submit" (click)="addCategory()" mat-dialog-close [disabled]="formisvalid" mat-button cdkFocusInitial>Submit</button>
+</div>

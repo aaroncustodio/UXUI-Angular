@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Confirm Action</h1>
+<div mat-dialog-content>
+    Delete this category?
+</div>
+<br>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button type="submit"
+        color="warn"
+        (click)="deleteCategory()"
+        mat-dialog-close [disabled]="formisvalid"
+        mat-flat-button cdkFocusInitial>
+        Delete
+    </button>
+</div>
